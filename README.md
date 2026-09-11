@@ -15,5 +15,14 @@ returned HTTP 200 and contains the exact publisher line:
 
 `google.com, pub-5676028087805239, DIRECT, f08c47fec0942fa0`
 
-App Store Connect and AdMob still require separate approval before these URLs
-are saved or the consent message is published.
+`ads-control.json` is the production rewarded-ad release switch. It is checked
+on app launch and foreground entry. The checked-in public configuration must
+remain fail-closed until the App Store listing is live, AdMob is linked to that
+listing, the production binary has passed consent/reward QA, and enabling ads
+has received a separate explicit approval. Enable both the global switch and
+each intended placement; malformed, missing, or unreachable configuration is
+treated as off by the app.
+
+The AdMob European regulations message was verified as Published on September
+10, 2026. The remote control remains entirely off; publishing this repository
+does not authorize or activate production ad traffic.
